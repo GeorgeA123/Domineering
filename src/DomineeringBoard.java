@@ -93,7 +93,7 @@ public class DomineeringBoard extends Board<DomineeringMove> {
 	@Override
 	int value() {
 		if (availableMoves().isEmpty()) {
-			if (nextPlayer().equals(h)) {
+			if (!nextPlayer().equals(h)) {
 				return 1;
 			} else {
 				return -1;
