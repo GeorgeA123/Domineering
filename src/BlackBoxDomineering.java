@@ -76,8 +76,14 @@ public class BlackBoxDomineering {
 			int width = Integer.parseInt(args[2]);
 			int height = Integer.parseInt(args[3]);
 			DomineeringBoard board = new DomineeringBoard(width, height);
+			if (order.equals("first") && hOrV.equals("h")){
+				board.tree().firstPlayer(new commandLineDom());
+			}else{
+				board.tree().secondPlayer(new commandLineDom());
+			}
 			
-			board.tree().firstPlayer(new commandLineDom());
+			
+			
 		}catch(AssertionError e){
 			System.err.println("Something went wrong");
 			System.exit(1);
